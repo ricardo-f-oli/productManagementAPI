@@ -27,10 +27,13 @@ Dockerized API for seamless deployment.
 Integration with a PostgreSQL database and Angular-based frontend.
 
 # Technology Stack
--> Backend Framework: Spring Boot (Spring MVC, Spring Data JPA, Spring Security)
--> Frontend: Angular (interacts with this API)
--> Database: PostgreSQL
--> Containerization: Docker
+Backend Framework: Spring Boot (Spring MVC, Spring Data JPA, Spring Security)
+
+Frontend: Angular (interacts with this API)
+
+Database: PostgreSQL
+
+Containerization: Docker
 
 # API Endpoints
 Products
