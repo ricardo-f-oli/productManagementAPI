@@ -4,6 +4,7 @@ import com.project.productManagementAPI.application.service.ProductService;
 import com.project.productManagementAPI.domain.products.Product;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,32 +16,36 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping
+    @GetMapping("/products")
     public List<Product> getProducts() {
-        return productService.getAllProducts();
+        return new ArrayList<>();
+//        return productService.getAllProducts();
     }
 
-    @GetMapping
-    public List<Product> getProducts(
+    @GetMapping("/products/id")
+    public List<Product> getProductsParam(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Long categoryId,
             @RequestParam(required = false, defaultValue = "id") String sortBy
     ) {
-        return productService.findByCriteria(name, categoryId, sortBy);
+        return new ArrayList<>();
+//        return productService.findByCriteria(name, categoryId, sortBy);
     }
 
     @PostMapping("/create")
     public Product createProduct(@RequestBody Product product) {
-        return productService.saveProduct(product);
+        return new Product();
+//        return productService.saveProduct(product);
     }
 
     @PutMapping("/update/{id}")
     public Product updateProduct(@RequestBody Product product, @PathVariable Long id){
-        return productService.updateProduct(product, id);
+        return new Product();
+//        return productService.updateProduct(product, id);
     }
 
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id) {
-        productService.deleteProduct(id);
+//        productService.deleteProduct(id);
     }
 }
